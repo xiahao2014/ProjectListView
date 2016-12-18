@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/root_ly"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal">
+
+
+    <com.efunor.project_l.ui.BreadcrumbLayout
+        android:id="@+id/layer_bread"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:visibility="gone"/>
+
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layer_bread">
+
+        <com.efunor.project_l.ui.SwipeRefreshLayout
+            android:id="@+id/id_swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.efunor.project_l.ui.TouchInterceptorListView
+                android:id="@+id/mtrlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawSelectorOnTop="false"
+                android:fastScrollEnabled="true"
+                android:listSelector="#00000000"
+                android:textSize="18sp"/>
+        </com.efunor.project_l.ui.SwipeRefreshLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layer_bread"
+        android:layout_toRightOf="@+id/content"
+        android:orientation="vertical">
+        <!--<include layout="@layout/layout_menu"/>-->
+
+
+        <com.efunor.project_l.ui.TouchInterceptorListView
+            android:id="@+id/mtrlist2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#3db"
+            android:drawSelectorOnTop="false"
+            android:fastScrollEnabled="true"
+            android:listSelector="#00000000"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
